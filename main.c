@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 		op = strtok(lineptr, "\n\t\r ");
 		if (op != NULL && op[0] != '#')
 		{
-			get_op(op, &stack, line_number);
+			_op_check(op, &stack, line_number);
 		}
 	}
 	exit(EXIT_SUCCESS);
