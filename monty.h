@@ -9,6 +9,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+
+
 /**
  * struct var_s - struct to contain the main variables of the Monty interpreter
  * @queue: flag to determine if in stack vs queue mode
@@ -23,8 +25,12 @@ typedef struct var_s
 #define STACK 0
 #define QUEUE 1
 
+
+
 /* global struct to hold flag for queue and stack length */
 extern var_t var;
+
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -42,6 +48,8 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
+
+
 /**
  * struct instruction_s - opcoode and its function
  * @opcode: the opcode
@@ -56,7 +64,9 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void get_op(char *op, stack_t **stack, unsigned int line_number);
+
+
+void _op_check(char *op, stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
 void m_push2(stack_t **stack, int n);
 void _pall(stack_t **stack, unsigned int line_number);
